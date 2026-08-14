@@ -21,11 +21,12 @@ submitting catering/order enquiries, and finding contact/location details.
 - Homepage with hero section and featured products
 - About Us page with founder story and mission/vision
 - Products page with categorised pricing
+- Gallery page showcasing past cakes, pastries, and catered events
 - Enquiry form for custom orders and catering requests
 - Contact page with two locations and a contact form
 
 ## Sitemap
-index.html → about.html, products.html, enquiry.html, contact.html
+index.html → about.html, products.html,gallery.html, enquiry.html, contact.html
 (flat, single-level hierarchy — all pages linked from main navigation)
 
 ## Timeline and Milestones
@@ -36,13 +37,15 @@ index.html → about.html, products.html, enquiry.html, contact.html
 ## Part 1 Details
 - Website Project Proposal completed and approved (Thandeka's Kitchen)
 - Content researched and sourced (see /research folder)
-- 5 HTML pages created with semantic structure and navigation
+- 6 HTML pages created with semantic structure and navigation
 - Initial commit pushed to GitHub
 
 ## Changelog
-- [14/08/26]: Initial commit — folder structure and 5 HTML page skeletons
+- [14/08/26]: Initial commit — folder structure and 6 HTML page skeletons
 - [14/08/26]: README.md added
+- [14/08/26]: Added Gallery page, blush colour scheme, updated navigation across all pages
 
 ## References
 [Xneelo, 2026. NPO hosting packages. Available at: https://www.xneelo.co.za [Accessed 14 August 2026].
 ZADNA, 2026. .org.za domain registration. Available at: https://www.zadna.org.za [Accessed 14 August 2026].]
+Unsplash, 2026. Free stock photography. Available at: https://unsplash.com [Accessed 14 August 2026].
