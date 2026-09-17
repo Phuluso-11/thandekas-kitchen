@@ -3,39 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Request a quote from Thandeka's Kitchen for a custom cake, pastry order or corporate catering in Johannesburg.">
     <title>Enquiry | Thandeka's Kitchen</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-    <header>
-        <div class="logo">Thandeka's Kitchen</div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="products.html">Products</a></li>
-                 <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="enquiry.html" class="active">Enquiry</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <header class="site-header">
+        <div class="header-inner">
+            <a class="logo" href="index.html">Thandeka's Kitchen</a>
+            <input type="checkbox" id="nav-toggle" class="nav-toggle">
+            <label class="nav-toggle-label" for="nav-toggle" aria-label="Open and close the navigation menu"><span></span></label>
+            <nav class="site-nav" aria-label="Main navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="enquiry.html" class="active" aria-current="page">Enquiry</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <main>
+    <main id="main-content">
         <h1>Request a Quote</h1>
         <p>Tell us about your order or event, and we'll get back to you within 24 hours.</p>
 
-        
+        <!-- Quote request form. Styling and the two-column desktop layout come
+             from style.css; JavaScript validation follows in Part 3. -->
         <form id="enquiry-form" action="#" method="post">
             <label for="name">Full Name</label>
-            <input type="text" id="name" name="name" required>
+            <input type="text" id="name" name="name" autocomplete="name" required>
 
             <label for="email">Email Address</label>
-            <input type="email" id="email" name="email" required>
+            <input type="email" id="email" name="email" autocomplete="email" required>
 
             <label for="phone">Phone Number</label>
-            <input type="tel" id="phone" name="phone" required>
+            <input type="tel" id="phone" name="phone" autocomplete="tel" required>
 
             <label for="event-type">Type of Enquiry</label>
             <select id="event-type" name="event-type">
@@ -52,7 +64,7 @@
         </form>
     </main>
 
-    <footer>
+    <footer class="site-footer">
         <p>&copy; 2026 Thandeka's Kitchen. All rights reserved.</p>
     </footer>
 
