@@ -3,6 +3,6 @@
 User-agent: *
 Allow: /
 Disallow: /tools/
-Disallow: /docs/
+Disallow: /document/
 
 Sitemap: https://phuluso-11.github.io/thandekas-kitchen/sitemap.xml

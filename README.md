@@ -162,19 +162,19 @@ Tested in Google Chrome, Microsoft Edge and Mozilla Firefox using Chrome DevTool
 
 | Device / viewport | Screenshot |
 |---|---|
-| Desktop — 1920 × 1080 | `docs/screenshots/desktop-1920.png` |
-| Laptop — 1366 × 768 | `docs/screenshots/laptop-1366.png` |
-| Tablet — iPad Air, 820 × 1180 | `docs/screenshots/tablet-ipad-air.png` |
-| Mobile — iPhone 14 Pro, 393 × 852 | `docs/screenshots/mobile-iphone-14.png` |
-| Mobile — Samsung Galaxy S20 Ultra, 412 × 915 | `docs/screenshots/mobile-galaxy-s20.png` |
+| Desktop — 1920 × 1080 | `document/screenshots/desktop-1920.png` |
+| Laptop — 1366 × 768 | `document/screenshots/laptop-1366.png` |
+| Tablet — iPad Air, 820 × 1180 | `document/screenshots/tablet-ipad-air.png` |
+| Mobile — iPhone 14 Pro, 393 × 852 | `document/screenshots/mobile-iphone-14.png` |
+| Mobile — Samsung Galaxy S20 Ultra, 412 × 915 | `document/screenshots/mobile-galaxy-s20.png` |
 
 ### Responsive screenshots (Part 2)
-![Desktop 1920](docs/screenshots/desktop-1920.png)
-![Laptop 1366](docs/screenshots/laptop-1366.png)
-![iPad Air](docs/screenshots/tablet-ipad-air.png)
-![iPhone 14 Pro](docs/screenshots/mobile-iphone-14.png)
-![Galaxy S20 Ultra](docs/screenshots/mobile-galaxy-s20.png)
-> **To do before submitting:** open each page at the sizes above (DevTools → Toggle device toolbar → pick the device → Capture screenshot), save the images into `docs/screenshots/` using the file names in the table, and commit them.
+![Desktop 1920](document/screenshots/desktop-1920.png)
+![Laptop 1366](document/screenshots/laptop-1366.png)
+![iPad Air](document/screenshots/tablet-ipad-air.png)
+![iPhone 14 Pro](document/screenshots/mobile-iphone-14.png)
+![Galaxy S20 Ultra](document/screenshots/mobile-galaxy-s20.png)
+
 
 ## 9. Timeline and Milestones
 
