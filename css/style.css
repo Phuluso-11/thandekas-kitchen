@@ -1031,3 +1031,482 @@ form button[type="submit"] {
         max-width: 100%;
     }
 }
+
+/* ==========================================================================
+   14. PART 3 COMPONENTS
+   Styles for the JavaScript features: form errors and results, product
+   search and cards, accordion, lightbox, map and reveal animation.
+   Everything uses the custom properties from section 2.
+   ========================================================================== */
+
+/* The hidden attribute must beat any display rule set elsewhere. */
+[hidden] {
+    display: none !important;
+}
+
+/* Stops the page scrolling behind the open lightbox. */
+.no-scroll {
+    overflow: hidden;
+}
+
+/* --- Scroll-reveal animation (class added by script.js) --- */
+.reveal {
+    opacity: 0;
+}
+
+.reveal.is-visible {
+    opacity: 1;
+    animation: reveal-in 0.7s var(--ease) backwards;
+}
+
+@keyframes reveal-in {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Form fields with error messages --- */
+.field {
+    display: grid;
+    gap: 0.25rem;
+    min-width: 0;
+}
+
+.error-msg {
+    color: #9B2C2C;
+    font-size: var(--fs-sm);
+}
+
+.error-msg:empty {
+    display: none;
+}
+
+.field-hint {
+    color: var(--clr-muted);
+    font-size: var(--fs-xs);
+}
+
+/* Invalid fields: same specificity as the valid-state rule in section 9,
+   and later in the file, so these win. */
+form .field input.is-invalid,
+form .field select.is-invalid,
+form .field textarea.is-invalid {
+    border-color: #B3261E;
+    background-color: #FFF5F4;
+}
+
+form .field input.is-invalid:focus,
+form .field select.is-invalid:focus,
+form .field textarea.is-invalid:focus {
+    box-shadow: 0 0 0 4px rgba(179, 38, 30, 0.18);
+}
+
+.form-status {
+    grid-column: 1 / -1;
+    margin: 0;
+    font-weight: 700;
+}
+
+.form-status.is-error {
+    color: #9B2C2C;
+}
+
+/* --- Response panels (enquiry quote, contact email) --- */
+.result-panel {
+    margin-top: var(--sp-3);
+    padding: var(--sp-3);
+    background-color: var(--glass-bg);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-soft);
+}
+
+.result-panel:focus {
+    outline: none;
+}
+
+.result-list {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 0.4rem var(--sp-3);
+    margin-bottom: var(--sp-2);
+}
+
+.result-list dt {
+    font-weight: 700;
+    color: var(--clr-cocoa);
+}
+
+.result-list dd {
+    margin: 0;
+    overflow-wrap: anywhere;
+}
+
+.result-note {
+    color: var(--clr-muted);
+    font-size: var(--fs-sm);
+}
+
+.email-preview {
+    margin: var(--sp-2) 0;
+    padding: var(--sp-2);
+    background-color: var(--clr-white);
+    border: 1px solid var(--clr-line);
+    border-radius: var(--radius-sm);
+    font-family: var(--font-body);
+    font-size: var(--fs-sm);
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+.result-panel button,
+.product-empty button,
+.product-tools button,
+.map-focus {
+    padding: 0.7rem 1.4rem;
+    background-color: var(--clr-white);
+    color: var(--clr-cocoa);
+    border: 1px solid var(--clr-rose);
+    border-radius: var(--radius-sm);
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color var(--speed) var(--ease);
+}
+
+.result-panel button,
+.product-empty button {
+    margin-top: var(--sp-1);
+}
+
+.result-panel button:hover,
+.result-panel button:focus-visible,
+.product-empty button:hover,
+.product-empty button:focus-visible,
+.product-tools button:hover,
+.product-tools button:focus-visible,
+.map-focus:hover,
+.map-focus:focus-visible {
+    background-color: var(--clr-blush);
+}
+
+/* --- Products: search tools, count and card grid --- */
+.product-tools {
+    display: grid;
+    gap: var(--sp-2);
+    margin: var(--sp-3) 0 var(--sp-2);
+    padding: var(--sp-3);
+    background-color: var(--glass-bg);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-soft);
+}
+
+.product-tools label {
+    display: block;
+    margin-bottom: 0.25rem;
+    font-size: var(--fs-sm);
+    font-weight: 700;
+    color: var(--clr-cocoa);
+}
+
+.product-tools input,
+.product-tools select {
+    width: 100%;
+    padding: 0.7rem 0.9rem;
+    background-color: var(--clr-white);
+    border: 1px solid var(--clr-line);
+    border-radius: var(--radius-sm);
+}
+
+.product-tools input:hover,
+.product-tools select:hover {
+    border-color: var(--clr-rose);
+}
+
+.product-tools input:focus,
+.product-tools select:focus {
+    outline: none;
+    border-color: var(--clr-rose-deep);
+    box-shadow: 0 0 0 4px rgba(217, 140, 140, 0.22);
+}
+
+.product-tools button {
+    justify-self: start;
+    align-self: end;
+}
+
+.product-count {
+    color: var(--clr-muted);
+    font-size: var(--fs-sm);
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+    gap: var(--sp-3);
+    margin-bottom: var(--sp-4);
+}
+
+.product-card {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background-color: var(--clr-white);
+    border: 1px solid var(--clr-line);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-soft);
+    animation: reveal-in 0.5s var(--ease) backwards;
+    transition: transform var(--speed) var(--ease), box-shadow var(--speed) var(--ease);
+}
+
+.product-card:hover,
+.product-card:focus-within {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lift);
+}
+
+.product-card-image {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+}
+
+.product-card-body {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding: var(--sp-2) var(--sp-3) var(--sp-3);
+}
+
+.product-card-body h3 {
+    margin-bottom: 0.25rem;
+}
+
+.product-price {
+    margin-bottom: 0.4rem;
+    font-weight: 700;
+    color: var(--clr-rose-deep);
+}
+
+.product-desc {
+    flex: 1;
+}
+
+.product-lead {
+    color: var(--clr-muted);
+    font-size: var(--fs-sm);
+}
+
+.product-card .cta-button {
+    align-self: flex-start;
+}
+
+.product-empty {
+    grid-column: 1 / -1;
+    padding: var(--sp-3);
+    background-color: var(--clr-blush);
+    border-radius: var(--radius-md);
+}
+
+/* --- Accordion --- */
+.faq h2 {
+    margin-bottom: var(--sp-2);
+}
+
+.accordion h3 {
+    margin: 0;
+    font-size: var(--fs-base);
+}
+
+.accordion-trigger {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--sp-2);
+    padding: var(--sp-2) 0;
+    background: none;
+    border: none;
+    border-bottom: 1px solid var(--clr-line);
+    color: var(--clr-cocoa);
+    font-family: var(--font-display);
+    font-size: var(--fs-md);
+    text-align: left;
+    cursor: pointer;
+}
+
+.accordion-trigger::after {
+    content: "+";
+    flex-shrink: 0;
+    font-size: var(--fs-lg);
+    color: var(--clr-rose-deep);
+    transition: transform var(--speed) var(--ease);
+}
+
+.accordion-trigger[aria-expanded="true"]::after {
+    transform: rotate(45deg);
+}
+
+.accordion-trigger:hover,
+.accordion-trigger:focus-visible {
+    color: var(--clr-rose-deep);
+}
+
+.accordion-panel {
+    padding: var(--sp-2) 0 var(--sp-1);
+    animation: panel-open 0.35s var(--ease);
+}
+
+@keyframes panel-open {
+    from { opacity: 0; transform: translateY(-8px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Gallery lightbox --- */
+.gallery-grid img {
+    cursor: zoom-in;
+}
+
+.lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    align-items: center;
+    gap: var(--sp-1);
+    padding: var(--sp-2);
+    background-color: rgba(43, 28, 25, 0.92);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--speed) var(--ease), visibility var(--speed);
+}
+
+.lightbox.is-open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.lightbox-figure {
+    display: grid;
+    justify-items: center;
+    gap: var(--sp-1);
+    margin: 0;
+    min-width: 0;
+}
+
+.lightbox-image {
+    max-width: 100%;
+    max-height: 76vh;
+    object-fit: contain;
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-deep);
+}
+
+.lightbox-caption {
+    color: var(--clr-cream);
+    font-size: var(--fs-sm);
+    text-align: center;
+}
+
+.lightbox-counter {
+    color: var(--clr-rose);
+}
+
+.lightbox-close,
+.lightbox-nav {
+    width: 2.75rem;
+    height: 2.75rem;
+    background-color: rgba(255, 248, 246, 0.14);
+    color: var(--clr-white);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 50%;
+    font-size: 1.6rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: background-color var(--speed) var(--ease);
+}
+
+.lightbox-close {
+    position: absolute;
+    top: var(--sp-2);
+    right: var(--sp-2);
+}
+
+.lightbox-close:hover,
+.lightbox-close:focus-visible,
+.lightbox-nav:hover,
+.lightbox-nav:focus-visible {
+    background-color: var(--clr-rose-deep);
+}
+
+/* --- Map --- */
+#map-embed.leaflet-container {
+    display: block;
+    min-height: 380px;
+    border: 1px solid var(--clr-line);
+    isolation: isolate;                 /* keeps Leaflet's layers below the sticky header */
+    font-family: var(--font-body);
+}
+
+.map-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--sp-1);
+    margin-bottom: var(--sp-2);
+}
+
+.map-popup a {
+    color: var(--clr-rose-deep);
+    font-weight: 700;
+}
+
+.map-fallback {
+    padding: var(--sp-2);
+}
+
+/* --- Part 3 responsive adjustments --- */
+@media screen and (min-width: 40em) {
+    .product-tools {
+        grid-template-columns: 2fr 1fr 1fr auto;
+        align-items: end;
+    }
+}
+
+@media screen and (min-width: 56.25em) {
+    /* Status message lines up with the form fields in the two-column form. */
+    .form-status {
+        grid-column: 2;
+    }
+}
+
+@media screen and (max-width: 40em) {
+    .lightbox {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr auto;
+    }
+
+    .lightbox-figure {
+        grid-row: 1;
+    }
+
+    .lightbox-nav {
+        position: absolute;
+        bottom: var(--sp-2);
+    }
+
+    .lightbox-prev { left: var(--sp-2); }
+    .lightbox-next { right: var(--sp-2); }
+
+    .result-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* An empty status line must not leave a gap in the form grid. */
+.form-status:empty {
+    display: none;
+}
