@@ -1,0 +1,8 @@
+# robots.txt for Thandeka's Kitchen
+# Allow all crawlers on the public pages and keep project-only folders out of search.
+User-agent: *
+Allow: /
+Disallow: /tools/
+Disallow: /docs/
+
+Sitemap: https://phuluso-11.github.io/thandekas-kitchen/sitemap.xml
