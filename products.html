@@ -3,8 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Celebration cakes, corporate catering platters and artisan pastries from Thandeka's Kitchen, with current Johannesburg pricing in rands.">
-    <title>Products | Thandeka's Kitchen</title>
+    <title>Celebration Cakes, Catering &amp; Pastries | Thandeka's Kitchen</title>
+    <meta name="description" content="Browse and search birthday cakes from R450, wedding cakes from R1,800, catering platters and fresh pastries. Thandeka's Kitchen, Johannesburg.">
+    <meta name="keywords" content="birthday cakes Johannesburg, wedding cakes, cupcake towers, pastry platters, corporate catering prices, artisan bread">
+    <meta name="author" content="Phuluso">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#FBEAEA">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <link rel="canonical" href="https://phuluso-11.github.io/thandekas-kitchen/products.html">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Ctext y=%22.9em%22 font-size=%2290%22>🧁%3C/text>%3C/svg%3E">
+
+    <!-- Open Graph and Twitter tags control how the page looks when shared on social media -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Thandeka's Kitchen">
+    <meta property="og:locale" content="en_ZA">
+    <meta property="og:title" content="Celebration Cakes, Catering &amp; Pastries | Thandeka's Kitchen">
+    <meta property="og:description" content="Browse and search birthday cakes from R450, wedding cakes from R1,800, catering platters and fresh pastries. Thandeka's Kitchen, Johannesburg.">
+    <meta property="og:url" content="https://phuluso-11.github.io/thandekas-kitchen/products.html">
+    <meta property="og:image" content="https://phuluso-11.github.io/thandekas-kitchen/images/gallery/artisan-bakery-bread-pastries-counter.jpg">
+    <meta name="twitter:card" content="summary_large_image">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -34,10 +51,41 @@
     </header>
 
     <main id="main-content">
-        <h1>Our Products &amp; Services</h1>
+        <h1>Cakes, Catering &amp; Pastries in Johannesburg</h1>
+        <p>Search our menu, filter by category and sort by price. All prices are in South African rand.</p>
 
-        <!-- Category 1: made-to-order cakes -->
-        <section class="product-category">
+        <!-- Search, filter and sort controls: script.js redraws the list as you type -->
+        <div class="product-tools" role="search" aria-label="Search and filter products">
+            <div>
+                <label for="product-search">Search products</label>
+                <input type="search" id="product-search" placeholder="e.g. wedding, bread, platter" maxlength="60" autocomplete="off">
+            </div>
+            <div>
+                <label for="product-category">Category</label>
+                <select id="product-category">
+                    <option value="all">All categories</option>
+                </select>
+            </div>
+            <div>
+                <label for="product-sort">Sort by</label>
+                <select id="product-sort">
+                    <option value="name">Name (A to Z)</option>
+                    <option value="price-low">Price (low to high)</option>
+                    <option value="price-high">Price (high to low)</option>
+                </select>
+            </div>
+            <button type="button" id="product-reset">Clear</button>
+        </div>
+
+        <p id="product-count" class="product-count" aria-live="polite"></p>
+
+        <h2 class="visually-hidden">Product list</h2>
+        <!-- Product cards are built from data/products.json by script.js -->
+        <div id="product-list" class="product-grid"></div>
+
+        <!-- Plain list for visitors whose browsers do not run JavaScript -->
+        <noscript>
+            <section class="product-category">
             <h2>Celebration Cakes</h2>
             <p>Custom-designed cakes for birthdays, weddings, and special occasions.</p>
             <ul>
@@ -46,9 +94,7 @@
                 <li>Cupcake Towers — from R650</li>
             </ul>
         </section>
-
-        <!-- Category 2: business and office orders -->
-        <section class="product-category">
+            <section class="product-category">
             <h2>Corporate Catering</h2>
             <p>Pastry platters and boxed catering for meetings and office events.</p>
             <ul>
@@ -56,9 +102,7 @@
                 <li>Full Catering Package (per person) — R120</li>
             </ul>
         </section>
-
-        <!-- Category 3: daily counter items -->
-        <section class="product-category">
+            <section class="product-category">
             <h2>Artisan Pastries</h2>
             <p>Fresh croissants, muffins, and specialty breads baked daily.</p>
             <ul>
@@ -66,14 +110,16 @@
                 <li>Artisan Bread Loaf — R65</li>
             </ul>
         </section>
+        </noscript>
 
         <a href="enquiry.html" class="cta-button">Enquire About an Order</a>
     </main>
 
     <footer class="site-footer">
         <p>&copy; 2026 Thandeka's Kitchen. All rights reserved.</p>
+        <p>Johannesburg &amp; Alberton &middot; <a href="tel:+27115550192">011 555 0192</a> &middot; <a href="mailto:thandekaskitchen@gmail.com">thandekaskitchen@gmail.com</a></p>
     </footer>
 
-    <script src="js/script.js"></script>
+    <script src="js/script.js" defer></script>
 </body>
 </html>

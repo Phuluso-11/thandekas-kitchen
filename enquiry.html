@@ -3,8 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Request a quote from Thandeka's Kitchen for a custom cake, pastry order or corporate catering in Johannesburg.">
-    <title>Enquiry | Thandeka's Kitchen</title>
+    <title>Request a Cake or Catering Quote | Thandeka's Kitchen</title>
+    <meta name="description" content="Request a quote for a custom cake, pastry order or corporate catering in Johannesburg. Get an instant estimate from Thandeka's Kitchen.">
+    <meta name="keywords" content="cake quote Johannesburg, catering quote, custom cake enquiry, order pastries, corporate catering enquiry">
+    <meta name="author" content="Phuluso">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#FBEAEA">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <link rel="canonical" href="https://phuluso-11.github.io/thandekas-kitchen/enquiry.html">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Ctext y=%22.9em%22 font-size=%2290%22>🧁%3C/text>%3C/svg%3E">
+
+    <!-- Open Graph and Twitter tags control how the page looks when shared on social media -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Thandeka's Kitchen">
+    <meta property="og:locale" content="en_ZA">
+    <meta property="og:title" content="Request a Cake or Catering Quote | Thandeka's Kitchen">
+    <meta property="og:description" content="Request a quote for a custom cake, pastry order or corporate catering in Johannesburg. Get an instant estimate from Thandeka's Kitchen.">
+    <meta property="og:url" content="https://phuluso-11.github.io/thandekas-kitchen/enquiry.html">
+    <meta property="og:image" content="https://phuluso-11.github.io/thandekas-kitchen/images/gallery/artisan-bakery-bread-pastries-counter.jpg">
+    <meta name="twitter:card" content="summary_large_image">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -34,40 +51,99 @@
     </header>
 
     <main id="main-content">
-        <h1>Request a Quote</h1>
-        <p>Tell us about your order or event, and we'll get back to you within 24 hours.</p>
+        <h1>Request a Cake or Catering Quote</h1>
+        <p>Tell us about your order or event and get an instant estimate. We confirm every quote within 24 hours.
+           Not sure what to order? Browse our <a href="products.html">cakes, catering and pastries</a> first.</p>
 
-        <!-- Quote request form. Styling and the two-column desktop layout come
-             from style.css; JavaScript validation follows in Part 3. -->
-        <form id="enquiry-form" action="#" method="post">
+        <!-- Enquiry form. novalidate switches off the browser's own pop-ups so script.js can show
+             clear, styled messages beside each field. action="#" is only a fallback: script.js
+             handles the submission without reloading the page. -->
+        <form id="enquiry-form" action="#" method="post" novalidate>
             <label for="name">Full Name</label>
-            <input type="text" id="name" name="name" autocomplete="name" required>
-
+            <div class="field">
+                <input type="text" id="name" name="name" autocomplete="name" maxlength="60" required aria-describedby="name-error">
+                <span class="error-msg" id="name-error" aria-live="polite"></span>
+            </div>
             <label for="email">Email Address</label>
-            <input type="email" id="email" name="email" autocomplete="email" required>
-
+            <div class="field">
+                <input type="email" id="email" name="email" autocomplete="email" maxlength="254" required aria-describedby="email-error">
+                <span class="error-msg" id="email-error" aria-live="polite"></span>
+            </div>
             <label for="phone">Phone Number</label>
-            <input type="tel" id="phone" name="phone" autocomplete="tel" required>
-
+            <div class="field">
+                <input type="tel" id="phone" name="phone" autocomplete="tel" inputmode="tel" placeholder="e.g. 011 555 0192" required aria-describedby="phone-error">
+                <span class="error-msg" id="phone-error" aria-live="polite"></span>
+            </div>
             <label for="event-type">Type of Enquiry</label>
-            <select id="event-type" name="event-type">
-                <option value="cake">Custom Cake</option>
-                <option value="catering">Corporate Catering</option>
-                <option value="pastries">Pastry Order</option>
-                <option value="other">Other</option>
-            </select>
+            <div class="field">
+                <select id="event-type" name="event-type" required aria-describedby="event-type-error">
+                    <option value="cake">Custom Cake</option>
+                    <option value="catering">Corporate Catering</option>
+                    <option value="pastries">Pastry Order</option>
+                    <option value="other">Other</option>
+                </select>
+                <span class="error-msg" id="event-type-error" aria-live="polite"></span>
+            </div>
+            <label for="product" data-product-only>Product</label>
+            <div class="field" data-product-only>
+                <select id="product" name="product" required aria-describedby="product-error"></select>
+                <span class="error-msg" id="product-error" aria-live="polite"></span>
+            </div>
 
+            <label for="quantity" id="quantity-label" data-product-only>Quantity</label>
+            <div class="field" data-product-only>
+                <input type="number" id="quantity" name="quantity" min="1" max="500" step="1" value="1" inputmode="numeric" required aria-describedby="quantity-error">
+                <span class="error-msg" id="quantity-error" aria-live="polite"></span>
+            </div>
+
+            <label for="event-date">Date Needed</label>
+            <div class="field">
+                <input type="date" id="event-date" name="event-date" required aria-describedby="event-date-hint event-date-error">
+                <span class="field-hint" id="event-date-hint"></span>
+                <span class="error-msg" id="event-date-error" aria-live="polite"></span>
+            </div>
             <label for="message">Details</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
+            <div class="field">
+                <textarea id="message" name="message" rows="5" maxlength="1000" required aria-describedby="message-error" placeholder="Flavours, design ideas, number of guests, dietary needs..."></textarea>
+                <span class="error-msg" id="message-error" aria-live="polite"></span>
+            </div>
 
-            <button type="submit">Submit Enquiry</button>
+            <p id="enquiry-status" class="form-status" role="status"></p>
+            <button type="submit">Get My Quote</button>
         </form>
+
+        <!-- Quote and availability response, filled in by script.js after validation -->
+        <section id="enquiry-result" class="result-panel" tabindex="-1" aria-live="polite" hidden></section>
+
+        <!-- Accordion: one answer opens at a time (script.js) -->
+        <section class="faq" aria-labelledby="faq-heading">
+            <h2 id="faq-heading">Frequently Asked Questions</h2>
+            <div class="accordion">
+                <h3><button type="button" class="accordion-trigger" id="faq-1-trigger" aria-expanded="false" aria-controls="faq-1-panel">How much notice do you need?</button></h3>
+                <div class="accordion-panel" id="faq-1-panel" role="region" aria-labelledby="faq-1-trigger" hidden>
+                    <p>Birthday cakes and cupcake towers need 5 days, wedding cakes 14 days, pastry platters 3 days and full catering 7 days. Pastry boxes and bread loaves need 1 day. The form checks your date against these times.</p>
+                </div>
+                <h3><button type="button" class="accordion-trigger" id="faq-2-trigger" aria-expanded="false" aria-controls="faq-2-panel">How is my estimate worked out?</button></h3>
+                <div class="accordion-panel" id="faq-2-panel" role="region" aria-labelledby="faq-2-trigger" hidden>
+                    <p>The estimate multiplies the price of your chosen product by the quantity. Cake prices are starting prices, because the final price depends on size, flavours and decoration. We confirm the exact price in writing.</p>
+                </div>
+                <h3><button type="button" class="accordion-trigger" id="faq-3-trigger" aria-expanded="false" aria-controls="faq-3-panel">Can I change my order after I enquire?</button></h3>
+                <div class="accordion-panel" id="faq-3-panel" role="region" aria-labelledby="faq-3-trigger" hidden>
+                    <p>Yes. Reply to our confirmation email or call 011 555 0192 and we will adjust your order wherever we can.</p>
+                </div>
+                <h3><button type="button" class="accordion-trigger" id="faq-4-trigger" aria-expanded="false" aria-controls="faq-4-panel">Where can I collect my order?</button></h3>
+                <div class="accordion-panel" id="faq-4-panel" role="region" aria-labelledby="faq-4-trigger" hidden>
+                    <p>You can collect from our bakery in Johannesburg or our pop-up kitchen in Alberton. See the <a href="contact.html">contact page</a> for addresses and a map.</p>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer class="site-footer">
         <p>&copy; 2026 Thandeka's Kitchen. All rights reserved.</p>
+        <p>Johannesburg &amp; Alberton &middot; <a href="tel:+27115550192">011 555 0192</a> &middot; <a href="mailto:thandekaskitchen@gmail.com">thandekaskitchen@gmail.com</a></p>
     </footer>
 
-    <script src="js/script.js"></script>
+    <script src="js/script.js" defer></script>
 </body>
 </html>

@@ -3,12 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Contact Thandeka's Kitchen: bakery address in Johannesburg, pop-up kitchen in Alberton, phone, email and a message form.">
-    <title>Contact | Thandeka's Kitchen</title>
+    <title>Contact &amp; Locations | Thandeka's Kitchen Johannesburg</title>
+    <meta name="description" content="Find Thandeka's Kitchen in Johannesburg and Alberton, view our map, call 011 555 0192 or send us a message by email.">
+    <meta name="keywords" content="contact Thandeka's Kitchen, bakery Johannesburg address, Alberton pop-up kitchen, bakery phone number, bakery map">
+    <meta name="author" content="Phuluso">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#FBEAEA">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <link rel="canonical" href="https://phuluso-11.github.io/thandekas-kitchen/contact.html">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Ctext y=%22.9em%22 font-size=%2290%22>🧁%3C/text>%3C/svg%3E">
+
+    <!-- Open Graph and Twitter tags control how the page looks when shared on social media -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Thandeka's Kitchen">
+    <meta property="og:locale" content="en_ZA">
+    <meta property="og:title" content="Contact &amp; Locations | Thandeka's Kitchen Johannesburg">
+    <meta property="og:description" content="Find Thandeka's Kitchen in Johannesburg and Alberton, view our map, call 011 555 0192 or send us a message by email.">
+    <meta property="og:url" content="https://phuluso-11.github.io/thandekas-kitchen/contact.html">
+    <meta property="og:image" content="https://phuluso-11.github.io/thandekas-kitchen/images/gallery/artisan-bakery-bread-pastries-counter.jpg">
+    <meta name="twitter:card" content="summary_large_image">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+    <!-- Leaflet map library (contact page only); integrity hash checks the file is unaltered -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -46,36 +65,72 @@
 
             <p>Phone: <a href="tel:+27115550192">011 555 0192</a></p>
             <p>Email: <a href="mailto:thandekaskitchen@gmail.com">thandekaskitchen@gmail.com</a></p>
+            <p>Planning an order? <a href="enquiry.html">Request a quote</a> or <a href="products.html">browse our products</a>.</p>
         </section>
 
-        <!-- Placeholder for the Google Maps embed added in Part 3 -->
+        <!-- Interactive Leaflet map: markers and popups are created by script.js -->
         <section class="map">
             <h2>Find Us</h2>
-            <div id="map-embed" aria-label="Map showing both bakery locations"></div>
+            <p>Choose a location to zoom to it, or drag and zoom the map yourself.</p>
+            <div class="map-controls">
+                <button type="button" class="map-focus" data-location="bakery">Show the bakery (Johannesburg)</button>
+                <button type="button" class="map-focus" data-location="popup">Show the pop-up kitchen (Alberton)</button>
+            </div>
+            <div id="map-embed" role="region" aria-label="Map showing both bakery locations"></div>
         </section>
 
-        <!-- General message form -->
+        <!-- General message form: validated by script.js, then compiled into an email (mailto:) -->
         <section class="contact-form">
             <h2>Send a Message</h2>
-            <form id="contact-form" action="#" method="post">
-                <label for="c-name">Full Name</label>
-                <input type="text" id="c-name" name="c-name" autocomplete="name" required>
+            <form id="contact-form" action="#" method="post" novalidate>
+            <label for="c-name">Full Name</label>
+            <div class="field">
+                <input type="text" id="c-name" name="c-name" autocomplete="name" maxlength="60" required aria-describedby="c-name-error">
+                <span class="error-msg" id="c-name-error" aria-live="polite"></span>
+            </div>
+            <label for="c-email">Email Address</label>
+            <div class="field">
+                <input type="email" id="c-email" name="c-email" autocomplete="email" maxlength="254" required aria-describedby="c-email-error">
+                <span class="error-msg" id="c-email-error" aria-live="polite"></span>
+            </div>
+            <label for="c-phone">Phone Number (optional)</label>
+            <div class="field">
+                <input type="tel" id="c-phone" name="c-phone" autocomplete="tel" inputmode="tel" placeholder="e.g. 011 555 0192" aria-describedby="c-phone-error">
+                <span class="error-msg" id="c-phone-error" aria-live="polite"></span>
+            </div>
+            <label for="c-type">Message Type</label>
+            <div class="field">
+                <select id="c-type" name="c-type" required aria-describedby="c-type-error">
+                    <option value="">Select a message type</option>
+                    <option value="General question">General question</option>
+                    <option value="Order follow-up">Order follow-up</option>
+                    <option value="Feedback or compliment">Feedback or compliment</option>
+                    <option value="Complaint">Complaint</option>
+                    <option value="Media or partnership">Media or partnership</option>
+                </select>
+                <span class="error-msg" id="c-type-error" aria-live="polite"></span>
+            </div>
+            <label for="c-message">Message</label>
+            <div class="field">
+                <textarea id="c-message" name="c-message" rows="5" maxlength="1000" required aria-describedby="c-message-error"></textarea>
+                <span class="error-msg" id="c-message-error" aria-live="polite"></span>
+            </div>
 
-                <label for="c-email">Email Address</label>
-                <input type="email" id="c-email" name="c-email" autocomplete="email" required>
-
-                <label for="c-message">Message</label>
-                <textarea id="c-message" name="c-message" rows="5" required></textarea>
-
+                <p id="contact-status" class="form-status" role="status"></p>
                 <button type="submit">Send Message</button>
             </form>
+
+            <!-- Email preview shown after validation, filled in by script.js -->
+            <div id="contact-result" class="result-panel" tabindex="-1" aria-live="polite" hidden></div>
         </section>
     </main>
 
     <footer class="site-footer">
         <p>&copy; 2026 Thandeka's Kitchen. All rights reserved.</p>
+        <p>Johannesburg &amp; Alberton &middot; <a href="tel:+27115550192">011 555 0192</a> &middot; <a href="mailto:thandekaskitchen@gmail.com">thandekaskitchen@gmail.com</a></p>
     </footer>
 
-    <script src="js/script.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="" defer></script>
+    <script src="js/script.js" defer></script>
 </body>
 </html>

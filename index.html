@@ -3,8 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Thandeka's Kitchen is a Johannesburg artisan bakery making custom celebration cakes, pastries and corporate catering since 2021.">
-    <title>Thandeka's Kitchen | Artisan Bakery &amp; Catering</title>
+    <title>Artisan Bakery &amp; Cakes in Johannesburg | Thandeka's Kitchen</title>
+    <meta name="description" content="Thandeka's Kitchen is a Johannesburg artisan bakery making custom celebration cakes, fresh pastries and corporate catering. Get a quote today.">
+    <meta name="keywords" content="artisan bakery Johannesburg, celebration cakes, custom birthday cakes, wedding cakes Johannesburg, corporate catering, fresh pastries">
+    <meta name="author" content="Phuluso">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#FBEAEA">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <link rel="canonical" href="https://phuluso-11.github.io/thandekas-kitchen/">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Ctext y=%22.9em%22 font-size=%2290%22>🧁%3C/text>%3C/svg%3E">
+
+    <!-- Open Graph and Twitter tags control how the page looks when shared on social media -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Thandeka's Kitchen">
+    <meta property="og:locale" content="en_ZA">
+    <meta property="og:title" content="Artisan Bakery &amp; Cakes in Johannesburg | Thandeka's Kitchen">
+    <meta property="og:description" content="Thandeka's Kitchen is a Johannesburg artisan bakery making custom celebration cakes, fresh pastries and corporate catering. Get a quote today.">
+    <meta property="og:url" content="https://phuluso-11.github.io/thandekas-kitchen/">
+    <meta property="og:image" content="https://phuluso-11.github.io/thandekas-kitchen/images/gallery/artisan-bakery-bread-pastries-counter.jpg">
+    <meta name="twitter:card" content="summary_large_image">
 
     <!-- Typography: Playfair Display (headings) and Lato (body), as set out in the project proposal -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,6 +30,29 @@
 
     <!-- External stylesheet (Part 2) -->
     <link rel="stylesheet" href="css/style.css">
+
+    <!-- Structured data (schema.org Bakery) helps search engines show local business details -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Bakery",
+      "name": "Thandeka's Kitchen",
+      "url": "https://phuluso-11.github.io/thandekas-kitchen/",
+      "image": "https://phuluso-11.github.io/thandekas-kitchen/images/gallery/artisan-bakery-bread-pastries-counter.jpg",
+      "description": "Johannesburg artisan bakery making custom celebration cakes, fresh pastries and corporate catering since 2021.",
+      "telephone": "+27115550192",
+      "email": "thandekaskitchen@gmail.com",
+      "foundingDate": "2021",
+      "priceRange": "R65 - R1,800+",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Trefnant Road",
+        "addressLocality": "Johannesburg",
+        "postalCode": "2196",
+        "addressCountry": "ZA"
+      }
+    }
+    </script>
 </head>
 <body>
 
@@ -48,8 +88,8 @@
             <div class="hero-media">
                 <!-- Responsive image: phones load the smaller file, larger screens the full one -->
                 <picture>
-                    <source media="(max-width: 600px)" srcset="images/gallery/hero-bakery-800.jpg">
-                    <img src="images/gallery/hero-bakery.jpg" alt="Freshly baked artisan bread and pastries cooling on a bakery counter">
+                    <source media="(max-width: 600px)" srcset="images/gallery/artisan-bakery-bread-pastries-counter-800.jpg">
+                    <img src="images/gallery/artisan-bakery-bread-pastries-counter.jpg" alt="Freshly baked artisan bread and pastries cooling on a bakery counter">
                 </picture>
             </div>
             <h1>Handcrafted Bakes for Every Celebration</h1>
@@ -61,24 +101,26 @@
         <section class="intro">
             <h2>Welcome</h2>
             <p>Thandeka's Kitchen has been baking joy into Johannesburg's celebrations since 2021,
-               from birthday cakes to full corporate catering.</p>
+               from birthday cakes to full corporate catering.
+               <a href="products.html">Browse our products</a> or <a href="about.html">read our story</a>.</p>
         </section>
 
         <!-- Most-ordered items, linking visitors towards the products page -->
         <section class="featured">
             <h2>Popular Picks</h2>
             <ul>
-                <li>Custom Celebration Cakes</li>
-                <li>Corporate Catering Packages</li>
-                <li>Artisan Pastry Boxes</li>
+                <li><a href="products.html?category=cake">Custom Celebration Cakes</a></li>
+                <li><a href="products.html?category=catering">Corporate Catering Packages</a></li>
+                <li><a href="products.html?category=pastries">Artisan Pastry Boxes</a></li>
             </ul>
         </section>
     </main>
 
     <footer class="site-footer">
         <p>&copy; 2026 Thandeka's Kitchen. All rights reserved.</p>
+        <p>Johannesburg &amp; Alberton &middot; <a href="tel:+27115550192">011 555 0192</a> &middot; <a href="mailto:thandekaskitchen@gmail.com">thandekaskitchen@gmail.com</a></p>
     </footer>
 
-    <script src="js/script.js"></script>
+    <script src="js/script.js" defer></script>
 </body>
 </html>
