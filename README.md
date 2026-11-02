@@ -7,6 +7,7 @@
 **Repository:** https://github.com/Phuluso-11/thandekas-kitchen
 **Current submission:** Part 2 — Designing the Visuals (CSS Styling and Responsive Design)
 
+https://phuluso-11.github.io/thandekas-kitchen/
 ---
 
 ## 1. Project Overview
@@ -315,7 +316,7 @@ Anthropic's Claude was used for guidance on CSS structure, responsive breakpoint
 
 ## Part 3: Enhancing Functionality and SEO
 
-**Live site:** <LIVE-URL>  |  **Repository:** https://github.com/Phuluso-11/thandekas-kitchen
+**Live site:** (https://phuluso-11.github.io/thandekas-kitchen/)  |  **Repository:** https://github.com/Phuluso-11/thandekas-kitchen
 
 ### Part 3 features
 
