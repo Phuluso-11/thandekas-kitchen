@@ -1,0 +1,107 @@
+{
+  "categories": [
+    { "id": "cake", "label": "Celebration Cakes" },
+    { "id": "catering", "label": "Corporate Catering" },
+    { "id": "pastries", "label": "Artisan Pastries" }
+  ],
+  "products": [
+    {
+      "id": "birthday-cake",
+      "name": "Birthday Cakes",
+      "category": "cake",
+      "price": 450,
+      "pricing": "from",
+      "unitLabel": "per cake",
+      "unitNoun": "cakes",
+      "leadDays": 5,
+      "description": "Custom-designed birthday cakes in your choice of flavour, filling and decoration.",
+      "keywords": ["birthday", "custom cake", "celebration", "chocolate", "vanilla"],
+      "image": "images/gallery/chocolate-birthday-cake-johannesburg-800.jpg",
+      "imageAlt": "Chocolate birthday cake with custom decoration"
+    },
+    {
+      "id": "wedding-cake",
+      "name": "Wedding Cakes",
+      "category": "cake",
+      "price": 1800,
+      "pricing": "from",
+      "unitLabel": "per cake",
+      "unitNoun": "cakes",
+      "leadDays": 14,
+      "description": "Tiered wedding cakes designed with you, including tastings and floral finishing.",
+      "keywords": ["wedding", "tiered", "floral", "bridal", "engagement"],
+      "image": "images/gallery/two-tier-floral-celebration-cake-johannesburg-800.jpg",
+      "imageAlt": "Custom two-tier celebration cake with floral decoration"
+    },
+    {
+      "id": "cupcake-tower",
+      "name": "Cupcake Towers",
+      "category": "cake",
+      "price": 650,
+      "pricing": "from",
+      "unitLabel": "per tower",
+      "unitNoun": "towers",
+      "leadDays": 5,
+      "description": "A stand of freshly iced cupcakes, ideal for parties, showers and dessert tables.",
+      "keywords": ["cupcakes", "dessert table", "party", "baby shower"],
+      "image": "images/gallery/wedding-dessert-table-catering-800.jpg",
+      "imageAlt": "Dessert table set up for a wedding event"
+    },
+    {
+      "id": "pastry-platter",
+      "name": "Pastry Platter",
+      "category": "catering",
+      "price": 550,
+      "pricing": "fixed",
+      "unitLabel": "per platter (serves 10)",
+      "unitNoun": "platters (each serves 10)",
+      "leadDays": 3,
+      "description": "A mixed platter of croissants, muffins and sweet pastries for meetings and office events.",
+      "keywords": ["platter", "meeting", "office", "croissants", "muffins", "corporate"],
+      "image": "images/gallery/corporate-catering-pastry-platters-johannesburg-800.jpg",
+      "imageAlt": "Corporate catering table setup with pastry platters"
+    },
+    {
+      "id": "full-catering-package",
+      "name": "Full Catering Package",
+      "category": "catering",
+      "price": 120,
+      "pricing": "fixed",
+      "unitLabel": "per person",
+      "unitNoun": "people",
+      "leadDays": 7,
+      "description": "Complete catering for functions and conferences, priced per guest.",
+      "keywords": ["catering", "function", "conference", "event", "per person", "corporate"],
+      "image": "images/gallery/corporate-catering-pastry-platters-johannesburg-800.jpg",
+      "imageAlt": "Corporate catering table setup with pastry platters"
+    },
+    {
+      "id": "pastry-box",
+      "name": "Pastry Box",
+      "category": "pastries",
+      "price": 180,
+      "pricing": "fixed",
+      "unitLabel": "per box of 6",
+      "unitNoun": "boxes",
+      "leadDays": 1,
+      "description": "Six freshly baked pastries, boxed and ready for gifting or sharing.",
+      "keywords": ["pastries", "croissants", "muffins", "gift box", "breakfast"],
+      "image": "images/gallery/fresh-croissants-pastries-display-800.jpg",
+      "imageAlt": "Assorted fresh pastries and croissants on display"
+    },
+    {
+      "id": "artisan-bread-loaf",
+      "name": "Artisan Bread Loaf",
+      "category": "pastries",
+      "price": 65,
+      "pricing": "fixed",
+      "unitLabel": "per loaf",
+      "unitNoun": "loaves",
+      "leadDays": 1,
+      "description": "Specialty loaves baked fresh daily with locally sourced ingredients.",
+      "keywords": ["bread", "sourdough", "loaf", "fresh", "daily"],
+      "image": "images/gallery/artisan-bread-loaves-cooling-rack-800.jpg",
+      "imageAlt": "Fresh artisan bread loaves cooling on a rack"
+    }
+  ]
+}
